@@ -1,0 +1,65 @@
+doctype html 
+html
+    head
+    title Read Books from Database 
+    link(href='css/Project_CSS.css', rel='stylesheet')
+body
+    // Banner image goes here, and the header is placed over it.
+    section#Banner
+      #header
+        img.center(src='css/header2.png', alt='Header')
+    // Menu for the different links to the other pages
+    section#Menu
+      ul.mainMenu
+        li
+          a.left(href='book_form3') Back
+
+    br
+
+    form(name = 'user_list', method = "get", action = "/user_list")
+            .actions
+                select.box(class="dropdown", id="user dropdown", name='user dropdown')
+                    option(value="WANT") Want to Read
+                    option(value="READ") Have Read
+                select.box(class="dropdown", id="search dropdown", name='search dropdown')
+                    option(value="ISBN") ISBN
+                    option(value="Author") Author
+                    option(vlaue="Genre") Genre
+                    option(value="Title") Title
+                input.box(type='searchbar', id='user search', name='search userList', placeholder='Search Any Book')
+                input(type='submit', name = "search button", value='Search', style = "padding: 10px;margin: px 5px;")
+
+    form(name = 'filter', method = "get", action = "/user_filter")
+            .actions
+                select.box(class="dropdown", id="user dropdown", name='user dropdown')
+                    option(value="WANT") Want to Read 
+                    option(value="READ") Have Read
+                select.box(class="dropdown", id="filter dropdown", name='filter dropdown')
+                    if filtered === false
+                        - var genresArr = [...new Set(readBookArr.map(item => item.genre))];
+                        each genre in genresArr  
+                            option(value=genre) #{genre}
+                    else
+                        each genre in genreArr  
+                            option(value=genre.genre) #{genre.genre} 
+                input(type='submit', name = "filter button", value='Filter', style = "padding: 10px;margin: px 5px;")
+
+  table
+    thead
+        tr 
+            td ISBN 
+            td Author
+            td Genre 
+            td Title
+    tbody 
+        each book in readBookArr
+            tr 
+                td #{book.isbn}
+                td #{book.author}
+                td #{book.genre}   
+                td #{book.title}
+                td  
+                    form(name = "delete-want-to-read", method = "post", action ="/delete_read/#{book.isbn}")
+                        .actions
+                            input(type="submit", value = "Remove", style = "padding: 5px;margin: 5px 0px;")
+                        

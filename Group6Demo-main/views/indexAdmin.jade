@@ -1,0 +1,82 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, maximum-scale=1')
+    title Proof of Concept
+    link(href='css/Project_CSS.css', rel='stylesheet')
+  body
+    // Banner image goes here, and the header is placed over it.
+    section#Banner
+      #header
+        img.center(src='css/header2.png', alt='Header')
+    // Menu for the different links to the other pages
+    section#Menu
+      ul.mainMenu
+        li
+          a.left(href='/addBook') Create Book
+        li 
+          a.right(href='/') Logout
+
+    section#Paragrah_1
+        //p #{databaseVersion}
+      
+    br
+
+
+    P
+    form(name = 'search', method = "get", action = "/adminSearch")
+            .actions
+                select.box(class="dropdown", id="admin dropdown", name='admin dropdown')
+                    option(value="ISBN") ISBN
+                    option(value="Author") Author
+                    option(vlaue="Genre") Genre
+                    option(value="Title") Title
+                input.box(type='searchbar', id='search catalog', name='search catalog', placeholder='Search Any Book')
+                input(type='submit', name = "search button",  value='Search',  style = "padding: 10px;margin: px 5px;")
+
+    table.zui-table
+        thead
+            tr 
+                td
+                td ISBN 
+                td Author
+                td Genre 
+                td Title
+        tbody
+            form(name = "deleting", id = "deleting", method = "post", action ="/deleteBooks")
+                .actions
+                    each book in bookArr
+                        tr 
+                            td
+                                input(type='checkbox', form = "deleting", name = 'bookItemCheck[]', id = "bookItemCheck[]", value = `${book.isbn}`)
+                            td #{book.isbn}
+                            td #{book.author}
+                            td #{book.genre}   
+                            td #{book.title}
+                            td
+                                form(name = "delete", method = "post", action ="/deleteOneBook/#{book.isbn}")
+                                    .actions
+                                        input(type="submit", value = "Delete", style = "padding: 5px;margin: 5px 0px;")
+                                form(name = "update", method = "post", action ="update/#{book.isbn}")
+                                    .actions
+                                        input(type="submit", value = "Update", style = "padding: 5px;margin: 5px 0px;")
+    input(type = "submit", form = "deleting", value = "DELETE", name = "btn", id = "btn")
+    
+
+    
+
+
+
+  
+
+
+
+      
+
+      
+          
+        
+
+
+      

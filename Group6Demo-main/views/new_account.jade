@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=0.8, maximum-scale=1')
+        title Login
+        link(href='css/Project_CSS.css', rel='stylesheet')
+
+    body(style='text-align: center;')
+    <br>
+    <br>
+    h1 Create Account
+    <br>
+    .alert.alert-danger !{error_messages}
+
+    form(name = "account-form", method = "post", action ="/account")
+        .input
+             
+            input(type='text', name='username', placeholder="Username")
+
+        .input
+            
+            input(type='password', name='password', placeholder="Password")
+
+        .actions
+            input(type="submit", value = "Create Account")
+    br

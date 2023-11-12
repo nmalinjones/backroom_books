@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=0.8, maximum-scale=1')
+        title Login
+        link(href='css/Project_CSS.css', rel='stylesheet') 
+    
+    body(style='text-align: center;')
+
+    <br>
+    <br>
+    h1 Admin Login
+    <br>
+    .alert.alert-danger !{error_messages}
+
+    form(name = "login-form", method = "post", action ="/super_login_check")
+        .input
+             
+            input(id = 'user', type='text', name='username', placeholder="Username")
+
+        .input
+            
+            input(id = 'pw', type='password', name='password', placeholder="Password")
+
+        .actions
+            input(type="submit", value = "Login")

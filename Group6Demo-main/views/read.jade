@@ -1,0 +1,75 @@
+doctype html
+
+html
+    head
+    title Read Books from Database 
+    link(href='css/Project_CSS.css', rel='stylesheet')
+body
+    // Banner image goes here, and the header is placed over it.
+    section#Banner
+      #header
+        img.center(src='css/header2.png', alt='Header')
+    // Menu for the different links to the other pages
+    section#Menu
+      ul.mainMenu
+        li
+          a.left(href='book_form3') Back
+
+    br
+
+
+    P
+    form(name = 'search', method = "get", action = "/search")
+            .actions
+                select.box(class="dropdown", id="search dropdown", name='search dropdown')
+                    option(value="ISBN") ISBN
+                    option(value="Author") Author
+                    option(vlaue="Genre") Genre
+                    option(value="Title") Title
+                input.box(type='searchbar', id='catalogssSearch', name='search catalog', placeholder='Search Any Book')
+                input(type='submit', name = "search button",  value='Search',  style = "padding: 10px;margin: px 5px;")
+
+    form(name = 'filter', method = "get", action = "/filter")
+            .actions 
+                select.box(class="dropdown", id="filter dropdown", name='filter dropdown') 
+                    if filtered === false
+                        - var genresArr = [...new Set(bookArr.map(item => item.genre))];
+                        each genre in genresArr  
+                            option(value=genre) #{genre}
+                    else
+                        each genre in genreArr  
+                            option(value=genre.genre) #{genre.genre}      
+                input(type='submit', name = "filter button", value='Filter', style = "padding: 10px;margin: px 5px;")
+
+    table.zui-table
+        thead
+            tr 
+                td
+                td ISBN 
+                td Author
+                td Genre 
+                td Title
+        tbody
+            form(name = "adding", id = "adding", method = "post", action ="/adding")
+                .actions
+                    each book in bookArr
+                        tr 
+                            td
+                                input(type='checkbox', form = "adding", name = 'bookItemCheck[]', id = "bookItemCheck[]", value = `${book.isbn}`)
+                            td #{book.isbn}
+                            td #{book.author}
+                            td #{book.genre}   
+                            td #{book.title}
+                            td
+                                form(name = "add-want-to-read", method = "post", action ="/add_want/#{book.isbn}")
+                                    .actions
+                                        input(type="submit", value = "Add to want to read", style = "padding: 5px;margin: 5px 0px;")
+                                form(name = "add-have-read", method = "post", action ="/add_read/#{book.isbn}")
+                                    .actions
+                                        input(type="submit", value = "Add to read", style = "padding: 5px;margin: 5px 0px;")
+    input(type = "submit", form = "adding", value = "READ", name = "btn", id = "btn")
+    input(type = "submit", form = "adding", value = "WANT", name = "btn", id = "btn")
+
+                        
+
+

@@ -1,0 +1,50 @@
+doctype html 
+
+script.
+    const deleteRecord = function(book_isbn) {
+        var url = "/add_read/" + book_isbn 
+        fetch(url, {
+            method: 'DELETE',
+            body: JSON.stringify({
+                _method: 'DELETE'
+            })
+        })
+        .then((response) => {
+            console.log('reload')
+            location.reload()
+        })
+    }
+
+html
+    head
+    title Read Books from Database 
+    link(href='css/Project_CSS.css' rel='stylesheet')
+body
+    // Banner image goes here, and the header is placed over it.
+    section#Banner
+      #header
+        img.center(src='css/header2.png' alt='Header')
+    // Menu for the different links to the other pages
+    section#Menu
+      ul.mainMenu
+        li
+          a.left(href='book_form3') Back
+
+    br
+
+  table
+        thead
+            tr 
+                td ISBN 
+                td Author
+                td Genre 
+                td Title
+        tbody 
+            each book in readBookArr
+                tr 
+                    td #{book.isbn}
+                    td #{book.author}
+                    td #{book.genre}   
+                    td #{book.title}
+                    td  
+                        button.button(onclick=`deleteRecord(${book.isbn})` style = "padding: 5px;margin: 5px 0px;") Remove

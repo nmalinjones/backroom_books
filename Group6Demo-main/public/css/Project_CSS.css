@@ -1,0 +1,193 @@
+/* Group 6     CSS Comment
+   Apr 6, 2022
+   Project 1 */
+
+
+/*Changes body's background color, font style
+and color, and removes the margin and padding
+so that images fit the screen fully.*/
+
+body {
+    background-color: #18191A;
+    color: #ffffff;
+    font-family: Georgia;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.box {
+    padding: 10px;
+    margin: 10px 5px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.forms {
+    margin: 10px;
+    padding: 10px;
+}
+
+.images {
+    border-radius: 10px;
+    margin: 2.5%;
+    float: center;
+}
+
+.grey {
+    color: #939799;
+    text-align: center;
+    font-size: 14px;
+    font-family: Georgia;
+}
+
+.boxes {
+    background-color: #5c7085;
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    font-family: Georgia;
+    border-radius: 6px;
+    font-size: 24px;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+/*Adds a banner background image for the top
+of the website.*/
+
+#header {
+    background-image: url('Header.jpg');
+    height: auto;
+    padding: 100px 100px
+}
+
+
+/*Centers the header image.*/
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+/*Simple menu for the different links of each project.*/
+
+ul.mainMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #242526;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+/* When hovering over links, it will change to a greyish color.*/
+
+a:hover {
+    background-color: #939799;
+    text-decoration: underline;
+}
+
+.mainMenu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.formholder {
+    padding: 10px;
+}
+
+.formholder textarea {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: white;
+    border: 0
+}
+
+input[type=text] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+input[type=password] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.rounded-input {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+input[type=submit] {
+    background-color: white;
+    border-radius: 5px;
+    padding: 13px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.button {
+    background-color: white;
+    border-radius: 5px;
+    padding: 13px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 0;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid grey;
+    font-size: 12pt;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
+    padding: .5em;
+    border: 1px solid lightgrey;
+}
+
+tr:hover {
+    background-color: #242526;
+}

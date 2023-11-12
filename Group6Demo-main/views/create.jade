@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, maximum-scale=1')
+    title Proof of Concept
+    link(href='css/Project_CSS.css', rel='stylesheet')
+  body
+    // Banner image goes here, and the header is placed over it.
+    section#Banner
+      #header
+        img.center(src='css/header2.png', alt='Header')
+    // Menu for the different links to the other pages
+    section#Menu
+      ul.mainMenu
+        li
+          a.left(href='adminPage') List of Books
+        li 
+          a.right(href='/') Logout
+
+    section#Paragrah_1
+        //p #{databaseVersion}
+      
+    br
+
+    .alert.alert-danger !{error_messages}
+
+    form(name = "login-form", method = "post", action ="/create_book")
+        .input
+             
+            input(id = 'ISBN', type='text', name='isbn', placeholder="ISBN")
+
+        .input
+            
+            input(id = 'Author', type='text', name='author', placeholder="Author")
+        
+        .input
+            
+            input(id = 'Genre', type='text', name='genre', placeholder="Genre")
+
+        .input
+            
+            input(id = 'Title', type='text', name='title', placeholder="Title")
+
+        .actions
+            input(type="submit", value = "Submit Book")
+
+    

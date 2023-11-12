@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, maximum-scale=1')
+    title Proof of Concept
+    link(href='css/Project_CSS.css', rel='stylesheet')
+    style.
+      body {background-color: #18191A;color: #ffffff;font-family: Georgia;max-width: 1300px;margin: auto;}
+      button {background-color: white;border-radius: 5px;padding: 13px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;border: 0;box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);}
+      input[type=submit] {background-color: white;border-radius: 5px;padding: 13px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;cursor: pointer;border: 0;box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);}
+      input[type=text] {padding: 10px;margin: 10px 0;border: 0;border-radius: 5px;box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);}
+  body(style='text-align: center;')
+
+    section#Paragrah_1
+        //p #{databaseVersion}
+    br
+    h1 Update Book
+
+
+    P
+    form(name = "update", method = "post", action ="/updateListing/#{isbn}")
+        .input
+             
+            input(id = 'ISBN', type='text', name='isbn', value= book.isbn, readonly)
+
+        .input
+            
+            input(id = 'Author', type='text', name='author', value= book.author)
+        
+        .input
+            
+            input(id = 'Genre', type='text', name='genre', value= book.genre)
+
+        .input
+            
+            input(id = 'Title', type='text', name='title', value= book.title)
+        br
+        .actions
+            input(type="submit", value = "Update Book")
+    br
+    
+
+    

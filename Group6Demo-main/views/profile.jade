@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=0.8, maximum-scale=1')
+    title Create
+    link(rel='stylesheet', href='css/Project_CSS.css')
+  body
+    // Banner image goes here, and the header is placed over it.
+    section#Banner
+      #header
+        img.center(src='css/header2.png', alt='Header')
+    // Menu for the different links to the other pages
+    section#Menu
+      ul.mainMenu
+        li
+          a.left(href='book_form3') Back
+    
+      br
+      br
+      form(name = "delete-account-form", method = "post", action ="/delete")
+        .actions
+            input(type="submit", value = "Delete Account", style = 'background-color: #FF7F7F;float: right;')
